@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+    <item
+    android:id="@+id/coustomers"
+    android:title="@string/coustomrs"
+    android:icon="@drawable/coustomrs"/>
+    <item
+        android:id="@+id/transactions"
+        android:title="Transactions"
+        android:icon="@drawable/transform"/>
+    </group>
+</menu>

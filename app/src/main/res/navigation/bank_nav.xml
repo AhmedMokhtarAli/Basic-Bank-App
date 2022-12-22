@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bank_nav"
+    app:startDestination="@id/coustomers">
+
+    <fragment
+        android:id="@+id/coustomers"
+        android:name="com.example.bankapp.Ui.coustomrs.Coustomers"
+        android:label="Coustomers"
+        tools:layout="@layout/coustomers" >
+        <action
+            android:id="@+id/action_coustomrs_to_transfers"
+            app:destination="@id/transactions" />
+        <action
+            android:id="@+id/action_coustomrs_to_coustomr"
+            app:destination="@id/coustomr" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactions"
+        android:name="com.example.bankapp.Ui.Transaction.Transactions"
+        android:label="Transactions"
+        tools:layout="@layout/transactions" >
+        <action
+            android:id="@+id/action_transfers_to_coustomrs"
+            app:destination="@id/coustomers" />
+    </fragment>
+    <fragment
+        android:id="@+id/coustomr"
+        android:name="com.example.bankapp.Ui.coustomrs.CoustomerFragment"
+        android:label="coustomer"
+        tools:layout="@layout/coustomer" >
+        <Argument
+            android:name="coustomr"
+            app:argType="com.example.bankapp.Model.Coustomer"
+            />
+        <argument
+            android:name="coustomer"
+            app:argType="com.example.bankapp.Model.Coustomer" />
+        <action
+            android:id="@+id/action_coustomr_to_depositDialog"
+            app:destination="@id/depositDialog" />
+    </fragment>
+    <fragment
+        android:id="@+id/depositDialog"
+        android:name="com.example.bankapp.Ui.coustomrs.DepositDialog"
+        android:label="DepositDialog" >
+        <action
+            android:id="@+id/action_depositDialog_to_coustomers"
+            app:destination="@id/coustomers" />
+        <argument
+            android:name="depositFrom"
+            app:argType="com.example.bankapp.Model.Coustomer" />
+        <argument
+            android:name="amount"
+            app:argType="float" />
+    </fragment>
+</navigation>
